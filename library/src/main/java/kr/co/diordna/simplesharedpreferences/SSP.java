@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 
 /**
@@ -34,10 +32,22 @@ public class SSP {
         mEditors = new ArrayList<>();
     }
 
-    public SSP put(String key, String value) throws JSONException {
-        mEditors.add(mEditor.putString(key, value));
+    public SSP put() {
+        // 에디터 생성
         return this;
     }
+
+    public SSP add() {
+        // put한 에디터에만 add시킨다
+        return this;
+    }
+
+
+
+//    public SSP put(String key, String value) throws JSONException {
+//        mEditors.add(mEditor.putString(key, value));
+//        return this;
+//    }
 
     public void commit() {
         SharedPreferences.Editor commiter = mPref.edit();
