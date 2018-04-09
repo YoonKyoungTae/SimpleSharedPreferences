@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * Created by ryans on 2018-04-03.
@@ -12,60 +12,67 @@ import java.util.ArrayList;
 
 public class SSP {
 
-    private SharedPreferences mPref;
-    private SharedPreferences.Editor mEditor;
-
-    private ArrayList<SharedPreferences.Editor> mEditors;
+    private static SharedPreferences mPref;
 
     private SSP(){}
 
-    private static class LazyHolder{
-        private static final SSP instance = new SSP();
-    }
-
-    public static SSP getInstance() {
-        return LazyHolder.instance;
-    }
-
-    public void init(Context context) {
+    public static void init(Context context) {
         mPref = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
-        mEditors = new ArrayList<>();
     }
 
-    public SSP put() {
-        // 에디터 생성
-        return this;
+    public static Editor openEdit() {
+        return new Editor(mPref);
     }
 
-    public SSP add() {
-        // put한 에디터에만 add시킨다
-        return this;
+    public static String getString(String key, String def) {
+        return mPref.getString(key, def);
     }
 
+    public static class Editor {
 
+        private SharedPreferences.Editor mEditor;
 
-//    public SSP put(String key, String value) throws JSONException {
-//        mEditors.add(mEditor.putString(key, value));
-//        return this;
-//    }
+        public Editor(SharedPreferences pref) {
+            mEditor = pref.edit();
+        }
 
-    public void commit() {
-        SharedPreferences.Editor commiter = mPref.edit();
+        public Editor put(String key, String val) {
+            mEditor.putString(key, val);
+            return this;
+        }
 
-        mEditor.commit();
-//        mEditor = null;
-//        mEditor = mPref.edit();
-    }
+        public Editor put(String key, int val) {
+            mEditor.putInt(key, val);
+            return this;
+        }
 
-    public void apply() {
-        mEditor.apply();
-//        mEditor = null;
-//        mEditor = mPref.edit();
-    }
+        public Editor put(String key, boolean val) {
+            mEditor.putBoolean(key, val);
+            return this;
+        }
 
-    private void makeEditor() {
-        if (mEditor == null) {
-            mEditor = mPref.edit();
+        public Editor put(String key, float val) {
+            mEditor.putFloat(key, val);
+            return this;
+        }
+
+        public Editor put(String key, long val) {
+            mEditor.putLong(key, val);
+            return this;
+        }
+
+        public Editor put(String key, Set<String> val) {
+            mEditor.putStringSet(key, val);
+            return this;
+        }
+
+        public void commit() {
+            mEditor.commit();
+        }
+
+        public void apply() {
+            mEditor.apply();
         }
     }
+
 }

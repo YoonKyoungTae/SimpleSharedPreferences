@@ -16,13 +16,18 @@ public class SampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
 
-        SSP.getInstance().init(this);
-        SSP.getInstance()
-                .put("A", "A")
-                .put("B", "B")
-                .put("C", "C")
-                .commit();
+        SSP.init(this);
 
+        SSP.openEdit()
+                .put("KEY1", "ABC")
+                .put("KEY2", "ABC")
+                .put("KEY3", "ABC")
+                .put("KEY4", "ABC")
+                .put("KEY5", "ABC")
+                .put("KEY6", "ABC")
+                .put("KEY7", "ABC")
+                .apply();
 
+        String value = SSP.getString("KEY1", "default");
     }
 }
