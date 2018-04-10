@@ -21,6 +21,9 @@ public class SSP {
     }
 
     public static Editor openEdit() {
+        if (mPref == null) {
+            throw new NullPointerException("SSP require call init()");
+        }
         return new Editor(mPref);
     }
 
@@ -28,6 +31,26 @@ public class SSP {
         return mPref.getString(key, def);
     }
 
+    public static int getInt(String key, int def) {
+        return mPref.getInt(key, def);
+    }
+
+    public static boolean getBoolean(String key, boolean def) {
+        return mPref.getBoolean(key, def);
+    }
+
+    public static float getString(String key, float def) {
+        return mPref.getFloat(key, def);
+    }
+
+    public static long getString(String key, long def) {
+        return mPref.getLong(key, def);
+    }
+
+    public static Set<String> getString(String key, Set<String> def) {
+        return mPref.getStringSet(key, def);
+    }
+    
     public static class Editor {
 
         private SharedPreferences.Editor mEditor;
