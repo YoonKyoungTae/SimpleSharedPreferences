@@ -50,7 +50,7 @@ public class SSP {
     public static Set<String> getString(String key, Set<String> def) {
         return mPref.getStringSet(key, def);
     }
-    
+
     public static class Editor {
 
         private SharedPreferences.Editor mEditor;
@@ -89,8 +89,16 @@ public class SSP {
             return this;
         }
 
-        public void commit() {
-            mEditor.commit();
+        public void clear() {
+            mEditor.clear();
+        }
+
+        public void remove(String key) {
+            mEditor.remove(key);
+        }
+
+        public boolean commit() {
+            return mEditor.commit();
         }
 
         public void apply() {
