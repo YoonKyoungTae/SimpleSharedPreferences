@@ -29,6 +29,7 @@
                     android:textColor="#000"/>
 
                 <EditText
+                    android:id="@+id/et_save_key"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"/>
@@ -47,6 +48,7 @@
                     android:textColor="#000"/>
 
                 <EditText
+                    android:id="@+id/et_save_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"/>
@@ -54,6 +56,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SAVE"/>
@@ -84,6 +87,7 @@
                     android:textColor="#000"/>
 
                 <EditText
+                    android:id="@+id/et_get_key"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"/>
@@ -91,6 +95,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_get"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="GET"/>
