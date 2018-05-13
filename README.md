@@ -26,7 +26,7 @@ SSP.init(Context);
 ~~~
 
 ## 사용법
-**PUT**
+### PUT
 값을 입력하는 방법은 *openEdit()* 으로 Editor를 열어주고 *put()* 을 호출 후, *commit()* or *apply()* 로 마무리해줍니다.
 *commit()* 과 *apply()* 는 기존의 Preference 와 동일합니다.
 ~~~
@@ -56,7 +56,7 @@ SSP.openEdit()
     .commit();
 ~~~
 
-**Get**
+### GET
 각 변수 타입으로 get을 호출하여 사용합니다.
 ~~~
 String a = SSP.getString(key, defaultValue);
