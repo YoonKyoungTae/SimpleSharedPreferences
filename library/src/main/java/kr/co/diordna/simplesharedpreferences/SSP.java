@@ -39,15 +39,15 @@ public class SSP {
         return mPref.getBoolean(key, def);
     }
 
-    public static float getString(String key, float def) {
+    public static float getFloat(String key, float def) {
         return mPref.getFloat(key, def);
     }
 
-    public static long getString(String key, long def) {
+    public static long getLong(String key, long def) {
         return mPref.getLong(key, def);
     }
 
-    public static Set<String> getString(String key, Set<String> def) {
+    public static Set<String> getStringSet(String key, Set<String> def) {
         return mPref.getStringSet(key, def);
     }
 
@@ -84,7 +84,7 @@ public class SSP {
             return this;
         }
 
-        public Editor putSetString(String key, Set<String> val) {
+        public Editor putStringSet(String key, Set<String> val) {
             put(key, val);
             return this;
         }
