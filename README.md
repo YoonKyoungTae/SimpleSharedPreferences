@@ -18,14 +18,13 @@ dependencies {
 }
 ~~~
 
-## 시작
-**초기화**
+## 사용법
+### 초기화
 기능을 사용하기 전 필수로 *init()* 을 호출하여줍니다.
 ~~~
 SSP.init(Context);
 ~~~
-
-## 사용법
+ 
 ### PUT
 값을 입력하는 방법은 *openEdit()* 으로 Editor를 열어주고 *put()* 을 호출 후, *commit()* or *apply()* 로 마무리해줍니다.
 *commit()* 과 *apply()* 는 기존의 Preference 와 동일합니다.
