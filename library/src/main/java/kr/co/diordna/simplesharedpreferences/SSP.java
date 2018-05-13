@@ -59,6 +59,36 @@ public class SSP {
             mEditor = pref.edit();
         }
 
+        public Editor putString(String key, String val) {
+            put(key, val);
+            return this;
+        }
+
+        public Editor putInt(String key, int val) {
+            put(key, val);
+            return this;
+        }
+
+        public Editor putBoolean(String key, boolean val) {
+            put(key, val);
+            return this;
+        }
+
+        public Editor putFloat(String key, float val) {
+            put(key, val);
+            return this;
+        }
+
+        public Editor putLong(String key, long val) {
+            put(key, val);
+            return this;
+        }
+
+        public Editor putSetString(String key, Set<String> val) {
+            put(key, val);
+            return this;
+        }
+
         public Editor put(String key, String val) {
             mEditor.putString(key, val);
             return this;
