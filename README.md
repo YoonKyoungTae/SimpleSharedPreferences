@@ -14,7 +14,7 @@ allprojects {
 
 //앱 단위의 build.gradle에 SimpleSharedPreferences 를 추가합니다.
 dependencies {
-    implementation 'com.github.YoonKyoungTae:SimpleSharedPreferences:{VERSION}'
+    implementation 'com.github.YoonKyoungTae:SimpleSharedPreferences:1.1'
 }
 ~~~
 
