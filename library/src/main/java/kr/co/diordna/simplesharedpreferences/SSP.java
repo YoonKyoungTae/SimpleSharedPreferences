@@ -27,6 +27,13 @@ public class SSP {
         return new Editor(mPref);
     }
 
+    public static Editor edit() {
+        if (mPref == null) {
+            throw new NullPointerException("SSP require call init()");
+        }
+        return new Editor(mPref);
+    }
+
     public static String getString(String key, String def) {
         return mPref.getString(key, def);
     }
@@ -120,11 +127,11 @@ public class SSP {
         }
 
         public void clear() {
-            mEditor.clear();
+            mEditor.clear().apply();
         }
 
         public void remove(String key) {
-            mEditor.remove(key);
+            mEditor.remove(key).apply();
         }
 
         public boolean commit() {
