@@ -1,3 +1,6 @@
+# Deprecated
+이 라이브러리는 더이상 지원하지 않습니다.
+
 # SimpleSharedPreferences
 'SimpleSharedPreferences'는 Android의 SharedPreference를 간편하게 사용할 수 있게 도와주는
 유틸 라이브러리입니다.
